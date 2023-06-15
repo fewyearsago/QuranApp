@@ -11,8 +11,15 @@ const Footer = () => {
       <Navbar bg="dark" variant="dark">
         <Container>
           <Nav className="justify-content-center flex-grow-1 pt-1 pb-1 pe-3">
-            <Nav.Link className="customLink" target="_blank" href="https://github.com/fewyearsago">
-              <svg enable-background="new 0 0 32 32" version="1.1" viewBox="0 0 32 32" width="30px">
+            <Nav.Link
+              className="customLink"
+              target="_blank"
+              href="https://github.com/fewyearsago">
+              <svg
+                enableBackground="new 0 0 32 32"
+                version="1.1"
+                viewBox="0 0 32 32"
+                width="30px">
                 <g id="OUTLINE_copy_2">
                   <g>
                     <path
@@ -23,7 +30,10 @@ const Footer = () => {
                 </g>
               </svg>
             </Nav.Link>
-            <Nav.Link className="customLink" target="_blank" href="https://t.me/zaurbkv">
+            <Nav.Link
+              className="customLink"
+              target="_blank"
+              href="https://t.me/zaurbkv">
               <svg
                 width="30px"
                 data-name="Layer 1"

@@ -1,7 +1,18 @@
 .root {
-  &Link:hover {
-    transform: scale(1.1);
-    transition: all 0.4s;
-    color: #11077a;
+  &Logo {
+    text-decoration: none;
+    color: inherit;
+    font-size: 22px;
+  }
+  &Link {
+    text-decoration: none;
+    color: inherit;
+    margin: 0 10px;
+    font-weight: 600;
+    &:hover {
+      transform: scale(1.1);
+      transition: all 0.4s;
+      color: #2c1ec7;
+    }
   }
 }

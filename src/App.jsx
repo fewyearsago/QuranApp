@@ -1,15 +1,16 @@
 import React from 'react';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Main from './components/Main';
+import Home from './pages/Home';
+import Read from './pages/Read';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="wrapper">
-      <Header />
-      <Main />
-      <Footer />
-    </div>
+    <>
+      <Routes>
+        <Route path="" element={<Home />} />
+        <Route path="read" element={<Read />} />
+      </Routes>
+    </>
   );
 }
 

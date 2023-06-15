@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter&display=swap');
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &Info {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 600px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    font-size: 17px;
+  }
+  &Box {
+    font-family: 'Bitter', serif;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100px;
+    column-gap: 60px;
+    &Item {
+      cursor: pointer;
+      font-size: 15px;
+      transition: all 0.15s;
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      &:hover {
+        text-decoration-color: #000;
+      }
+      span {
+        font-size: 14px;
+        color: rgb(164, 135, 4);
+      }
+    }
+  }
+}
