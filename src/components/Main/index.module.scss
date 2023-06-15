@@ -1,0 +1,29 @@
+.root {
+  padding: 150px 0;
+  flex-grow: 1;
+  &Box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div {
+      width: 50%;
+    }
+  }
+  &Link {
+    text-decoration: none;
+    color: #707070;
+    transition: all 0.4s;
+
+    &:hover {
+      color: #000;
+    }
+  }
+  h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
