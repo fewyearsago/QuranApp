@@ -19,10 +19,8 @@ const ItemBlock = ({ surah }) => {
               <li>
                 {e.id}. {e.translation}
               </li>
-              <div className={style.rootText}>
-                <li>{e.text}</li>
-                <span>﴾{e.id}﴿</span>
-              </div>
+
+              <li>{e.text}</li>
             </div>
           ))}
         </div>
