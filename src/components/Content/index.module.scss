@@ -13,6 +13,17 @@
     padding-top: 50px;
     font-size: 17px;
   }
+  &Link {
+    color: inherit;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all 0.15s;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    &:hover {
+      text-decoration-color: #000;
+    }
+  }
   &Box {
     font-family: 'Bitter', serif;
     display: flex;
@@ -20,14 +31,6 @@
     padding-bottom: 100px;
     column-gap: 60px;
     &Item {
-      cursor: pointer;
-      font-size: 15px;
-      transition: all 0.15s;
-      text-decoration: underline;
-      text-decoration-color: transparent;
-      &:hover {
-        text-decoration-color: #000;
-      }
       span {
         font-size: 14px;
         color: rgb(164, 135, 4);

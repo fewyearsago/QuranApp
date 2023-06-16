@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Scheherazade+New&family=Ubuntu&display=swap');
+.root {
+  font-family: 'Scheherazade New', serif;
+  padding: 50px 0 100px 0;
+  &Title {
+    text-align: center;
+    padding: 26px 0 50px 0;
+    font-size: 32px;
+  }
+  &Inner {
+    border: 1px solid #000;
+    padding: 30px;
+    h1 {
+      text-align: center;
+    }
+  }
+  &Text {
+    font-size: 22px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  &Link {
+    color: #000;
+  }
+  &Btn {
+    background-color: #829795;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    margin-top: 50px;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background-color: #c4d6a0;
+      color: #fff;
+    }
+  }
+  &Surah {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 20px;
+    li {
+      padding: 20px 10px 20px 20px;
+      max-width: 600px;
+    }
+  }
+}
