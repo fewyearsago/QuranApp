@@ -42,3 +42,9 @@ li {
 .navbar-expand .navbar-nav .nav-link {
   padding: 4px;
 }
+
+.rejected {
+  text-align: center;
+  font-size: 30px;
+  padding-top: 150px;
+}

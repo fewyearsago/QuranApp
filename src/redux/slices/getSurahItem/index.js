@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-export const fetchSurahData = createAsyncThunk(
-  'surah/fetchSurahStatus',
-  async () => {
+export const fetchSurahItem = createAsyncThunk(
+  'item/fetchItemStatus',
+  async (params) => {
+    const id = params;
     const { data } = await axios.get(
-      `https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/ru/index.json`,
+      `https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/ru/${id}.json`,
     );
     return data;
   },
@@ -13,11 +14,11 @@ export const fetchSurahData = createAsyncThunk(
 
 const initialState = {
   items: [],
-  status: '',
+  status: 'loading',
 };
 
-export const SurahSlice = createSlice({
-  name: 'Surah',
+export const getSurah = createSlice({
+  name: 'Item',
   initialState,
   reducers: {
     setItems: (state, action) => {
@@ -25,20 +26,20 @@ export const SurahSlice = createSlice({
     },
   },
   extraReducers: {
-    [fetchSurahData.pending]: (state) => {
+    [fetchSurahItem.pending]: (state) => {
       state.status = 'loading';
     },
-    [fetchSurahData.fulfilled]: (state, action) => {
+    [fetchSurahItem.fulfilled]: (state, action) => {
       state.items = action.payload;
       state.status = 'success';
     },
-    [fetchSurahData.rejected]: (state) => {
+    [fetchSurahItem.rejected]: (state) => {
       state.status = 'error';
       state.items = [];
     },
   },
 });
 
-export const { setItems } = SurahSlice.actions;
+export const { setItems } = getSurah.actions;
 
-export default SurahSlice.reducer;
+export default getSurah.reducer;

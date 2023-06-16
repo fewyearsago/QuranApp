@@ -1,32 +1,32 @@
-import axios from 'axios';
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import ItemBlock from '../components/ItemBlock';
+import { fetchSurahItem } from '../redux/slices/getSurahItem';
 
 const FullSurah = () => {
   const { id } = useParams();
-  const [surah, setSurah] = React.useState([]);
+  const dispatch = useDispatch();
+  const items = useSelector((state) => state.getSurah.items);
+  const status = useSelector((state) => state.getSurah.status);
   React.useEffect(() => {
-    setSurah([]);
-    const getFullSurah = async () => {
-      try {
-        const { data } = await axios.get(
-          `https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/ru/${id}.json`,
-        );
-        setSurah(data);
-      } catch {}
-    };
-    getFullSurah();
+    dispatch(fetchSurahItem(id));
   }, [id]);
-  if (surah.length == 0) {
-    return 'Загрузка..';
+  if (status === 'loading') {
+    return <div>Загрузка...</div>;
   }
-
   return (
     <>
       <Header />
-      <ItemBlock surah={surah} />
+      {status === 'error' ? (
+        <div className="rejected">
+          Произошла Ошибка. <br />
+          Пожалуйста, повторите попытку позже.
+        </div>
+      ) : (
+        <ItemBlock items={items} />
+      )}
     </>
   );
 };

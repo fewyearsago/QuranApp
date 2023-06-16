@@ -1,11 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchSurahData } from '../../redux/slices/SurahSlice';
 import style from './index.module.scss';
 import chunk from 'lodash.chunk';
 import Container from 'react-bootstrap/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
+import { fetchSurahData } from '../../redux/slices/SurahSlice';
 
 const Content = () => {
   const dispatch = useDispatch();
@@ -30,7 +30,10 @@ const Content = () => {
           {columns.map((e, i) => (
             <div key={i} className={style.rootBoxList}>
               {e.map((elem, index) => (
-                <Link className={style.rootLink} to={`/surah/${elem.id}`}>
+                <Link
+                  key={index}
+                  className={style.rootLink}
+                  to={`/surah/${elem.id}`}>
                   <li className={style.rootBoxItem} key={index}>
                     <span>{elem.id}</span>. {elem.transliteration} (
                     {elem.translation})
