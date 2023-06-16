@@ -1,15 +1,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-export const fetchSurahData = createAsyncThunk(
-  'surah/fetchSurahStatus',
-  async () => {
-    const { data } = await axios.get(
-      `https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/ru/index.json`,
-    );
-    return data;
-  },
-);
+export const fetchSurahData = createAsyncThunk('surah/fetchSurahStatus', async () => {
+  const { data } = await axios.get(
+    `https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/ru/index.json`,
+  );
+  return data;
+});
 
 const initialState = {
   items: [],
@@ -39,6 +36,6 @@ export const SurahSlice = createSlice({
   },
 });
 
-export const { increment } = SurahSlice.actions;
+export const { setItems } = SurahSlice.actions;
 
 export default SurahSlice.reducer;
