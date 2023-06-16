@@ -8,6 +8,7 @@ const FullSurah = () => {
   const { id } = useParams();
   const [surah, setSurah] = React.useState([]);
   React.useEffect(() => {
+    setSurah([]);
     const getFullSurah = async () => {
       try {
         const { data } = await axios.get(
@@ -17,7 +18,7 @@ const FullSurah = () => {
       } catch {}
     };
     getFullSurah();
-  }, []);
+  }, [id]);
   if (surah.length == 0) {
     return 'Загрузка..';
   }

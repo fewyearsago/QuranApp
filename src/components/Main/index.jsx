@@ -9,10 +9,10 @@ const Main = () => {
     <div className={style.root}>
       <Container className="custom-container">
         <div className={style.rootBox}>
-          <div>
+          <div className={style.rootText}>
             <h1>
-              "Тому, кто прочтет хотя бы одну букву из Корана, запишется одно
-              доброе дело, а за каждое доброе дело воздастся десятикратно"
+              "Тому, кто прочтет хотя бы одну букву из Корана, запишется одно доброе дело, а за
+              каждое доброе дело воздастся десятикратно"
             </h1>
             <Link to="/read" className={style.rootLink} href="#">
               Читайте Коран сейчас

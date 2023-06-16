@@ -14,10 +14,10 @@ const Header = () => {
         </NavLink>
         <Nav className="m-2">
           <NavLink className={style.rootLink} to="/">
-            Home
+            Главная
           </NavLink>
           <NavLink className={style.rootLink} to="/read">
-            Read
+            Читать
           </NavLink>
         </Nav>
       </Container>

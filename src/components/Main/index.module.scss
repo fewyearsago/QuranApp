@@ -1,13 +1,13 @@
 .root {
   padding: 150px 0;
   flex-grow: 1;
+  &Text {
+    width: 50%;
+  }
   &Box {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    div {
-      width: 50%;
-    }
   }
   &Link {
     text-decoration: none;
@@ -23,7 +23,8 @@
     margin-bottom: 20px;
   }
   img {
-    width: 100%;
+    max-width: 500px;
+
     object-fit: cover;
   }
 }
