@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { NavLink } from 'react-router-dom';
 const Header = () => {
   return (
-    <Navbar className="p-3" bg="white" variant="light">
+    <Navbar className="p-4" bg="white" variant="light">
       <Container>
         <NavLink className={style.rootLogo} to="/">
           QuranApp

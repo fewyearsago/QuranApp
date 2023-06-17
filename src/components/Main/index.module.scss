@@ -3,11 +3,19 @@
   flex-grow: 1;
   &Text {
     width: 50%;
+    @media (max-width: 900px) {
+      width: 500px;
+      text-align: center;
+      padding: 20px;
+    }
   }
   &Box {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    @media (max-width: 900px) {
+      flex-wrap: wrap;
+    }
   }
   &Link {
     text-decoration: none;
@@ -21,10 +29,19 @@
   h1 {
     font-size: 30px;
     margin-bottom: 20px;
+    @media (max-width: 900px) {
+      font-size: 24px;
+    }
+    @media (max-width: 500px) {
+      font-size: 18px;
+    }
   }
   img {
     max-width: 500px;
-
+    padding-top: 50px;
     object-fit: cover;
+    @media (max-width: 670px) {
+      width: 200px;
+    }
   }
 }
