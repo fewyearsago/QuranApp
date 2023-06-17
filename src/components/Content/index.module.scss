@@ -5,6 +5,9 @@
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
+  &NotFound {
+    min-height: 250px;
+  }
   &Info {
     text-align: center;
     margin: 0 auto;

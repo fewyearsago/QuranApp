@@ -41,7 +41,7 @@ const Content = () => {
           type="text"
         />
         <div className={style.rootBox}>
-          {filtered.length == 0 && <p>Не найдено.</p>}
+          {filtered.length == 0 && <p className={style.rootNotFound}>Не найдено.</p>}
           {columns.map((e, i) => (
             <div key={i} className={style.rootBoxList}>
               {e.map((elem, index) => (
