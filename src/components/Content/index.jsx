@@ -13,8 +13,8 @@ const Content = () => {
   const items = useSelector((state) => state.surah.items);
   const filtered = items.filter(
     (e) =>
-      e.translation.toLowerCase().includes(search) ||
-      e.transliteration.toLowerCase().includes(search),
+      e.translation.toLowerCase().includes(search.toLowerCase()) ||
+      e.transliteration.toLowerCase().includes(search.toLowerCase()),
   );
 
   const columns = chunk(filtered, 29);
@@ -41,7 +41,9 @@ const Content = () => {
           type="text"
         />
         <div className={style.rootBox}>
-          {filtered.length == 0 && <p className={style.rootNotFound}>Не найдено.</p>}
+          {filtered.length == 0 && (
+            <p className={style.rootNotFound}>Не найдено.</p>
+          )}
           {columns.map((e, i) => (
             <div key={i} className={style.rootBoxList}>
               {e.map((elem, index) => (
