@@ -9,11 +9,18 @@ import { fetchSurahData } from '../../redux/slices/SurahSlice';
 
 const Content = () => {
   const dispatch = useDispatch();
+  const [search, setSearch] = React.useState('');
+  const items = useSelector((state) => state.surah.items);
+  const filtered = items.filter(
+    (e) =>
+      e.translation.toLowerCase().includes(search) ||
+      e.transliteration.toLowerCase().includes(search),
+  );
+
+  const columns = chunk(filtered, 29);
   React.useEffect(() => {
     dispatch(fetchSurahData());
-  }, []);
-  const items = useSelector((state) => state.surah.items);
-  const columns = chunk(items, 29);
+  }, [dispatch]);
 
   return (
     <div className={style.root}>
@@ -26,7 +33,15 @@ const Content = () => {
             помимо Него защиты.» (18:27)
           </p>
         </div>
+        <input
+          placeholder="поиск.."
+          className={style.rootSearch}
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          type="text"
+        />
         <div className={style.rootBox}>
+          {filtered.length == 0 && <p>Не найдено.</p>}
           {columns.map((e, i) => (
             <div key={i} className={style.rootBoxList}>
               {e.map((elem, index) => (

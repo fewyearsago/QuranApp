@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  flex-grow: 1;
   &Info {
     text-align: center;
     margin: 0 auto;
@@ -12,6 +12,17 @@
     padding-bottom: 50px;
     padding-top: 50px;
     font-size: 17px;
+  }
+  &Search {
+    display: block;
+    border: none;
+    border-bottom: 2px solid #37562b;
+    margin: 0 0 60px auto;
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    padding-left: 10px;
+    width: 200px;
+    outline: none;
   }
   &Link {
     color: inherit;
