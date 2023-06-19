@@ -9,7 +9,7 @@ git clone https://github.com/fewyearsago/QuranApp.git<br>
 npm install<br>
 3. Запуск приложения<br>
 После успешной установки зависимостей, запустите приложение с помощью команды:<br>
-npm start<br>
+npm run dev<br>
 Приложение будет доступно по адресу http://localhost:5173.<br>
 Онлайн-доступ<br>
 
