@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import ItemBlock from '../components/ItemBlock';
 import { fetchSurahItem } from '../redux/slices/getSurahItem';
+import { Circle } from 'react-preloaders';
 
 const FullSurah = () => {
   const { id } = useParams();
@@ -14,7 +15,7 @@ const FullSurah = () => {
     dispatch(fetchSurahItem(id));
   }, [id]);
   if (status === 'loading') {
-    return <div>Загрузка...</div>;
+    return <Circle />;
   }
   return (
     <>
