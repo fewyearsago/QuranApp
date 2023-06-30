@@ -1,16 +1,13 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-export const fetchSurahItem = createAsyncThunk(
-  'item/fetchItemStatus',
-  async (params) => {
-    const id = params;
-    const { data } = await axios.get(
-      `https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/ru/${id}.json`,
-    );
-    return data;
-  },
-);
+export const fetchSurahItem = createAsyncThunk('item/fetchItemStatus', async (params) => {
+  const id = params;
+  const { data } = await axios.get(
+    `https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/ru/${id}.json`,
+  );
+  return data;
+});
 
 const initialState = {
   items: [],
